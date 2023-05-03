@@ -2,9 +2,10 @@ package exporter
 
 import (
 	"fmt"
+	"runtime"
+
 	"github.com/prometheus/common/log"
 	"gopkg.in/alecthomas/kingpin.v2"
-	"runtime"
 )
 
 var (
@@ -28,6 +29,8 @@ var (
 	// action
 	dryRun      = kingpin.Flag("dry-run", "dry run and print raw configs").Default("false").Short('D').Bool()
 	explainOnly = kingpin.Flag("explain", "explain server planned queries").Default("false").Short('E').Bool()
+	// dummy arguments to match helm charts and other exporters
+	dummyPath = kingpin.Flag("extend.query-path", "path to config dir or file").Short('d').Default("").String()
 )
 
 // ParseArgs will parse cli args with kingpin. url and config have special treatment
@@ -40,4 +43,3 @@ func ParseArgs() {
 	*pgURL = GetPGURL()
 	*configPath = GetConfig()
 }
-

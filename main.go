@@ -16,7 +16,7 @@ limitations under the License.
 
 package main
 
-import "github.com/Vonng/pg_exporter/exporter"
+import "github.com/gtmhub/pg_exporter/exporter"
 
 func main() {
 	exporter.Run()
