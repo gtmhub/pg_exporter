@@ -2,12 +2,13 @@ package exporter
 
 import (
 	"fmt"
-	"github.com/prometheus/common/log"
-	"gopkg.in/yaml.v3"
 	"io/ioutil"
 	"os"
 	"path"
 	"strings"
+
+	"github.com/prometheus/common/log"
+	"gopkg.in/yaml.v3"
 )
 
 // GetConfig will try load config from target path
